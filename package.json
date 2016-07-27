@@ -1,0 +1,66 @@
+{
+  "name": "@uber/parachute",
+  "description": "Eject npm module source into a project locally",
+  "version": "0.0.0",
+  "author": {
+    "name": "Uber Web Platform Team"
+  },
+  "keywords": [
+    "eject",
+    "babel",
+    "es6",
+    "task",
+    "uber-web",
+    "web-platform"
+  ],
+  "bin": {
+    "parachute": "dist/bin/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uber-web/parachute"
+  },
+  "bugs": {
+    "url": "https://github.com/uber-web/parachute/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "glob": "^7.1.1",
+    "meow": "^3.6.0",
+    "tar-fs": "^1.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-flow-strip-types": "^6.18.0",
+    "babel-preset-es2015": "^6.3.0",
+    "babel-preset-stage-2": "^6.3.0",
+    "eslint": "^2.10.0",
+    "eslint-config-uber-es2015": "^2.0.0",
+    "eslint-config-uber-es5": "^1.0.0",
+    "flow-bin": "^0.37.0",
+    "nyc": "^7.1.0",
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "build": "babel src -d dist --copy-files -s",
+    "cover": "nyc report --reporter=text-lcov",
+    "flow": "flow check",
+    "lint": "eslint src",
+    "precommit": "npm run lint -s && npm run cover",
+    "pretest": "npm run prepublish",
+    "prepublish": "npm run build",
+    "test": "npm run lint && npm run flow && nyc node dist/test/test.js"
+  },
+  "nyc": {
+    "reporter": [
+      "cobertura"
+    ]
+  },
+  "license": "MIT"
+}
