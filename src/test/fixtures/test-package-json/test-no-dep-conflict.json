@@ -1,0 +1,9 @@
+{
+  "name": "test-no-dep-conflict",
+  "version": "0.0.0",
+  "dependencies": {
+    "eslint": "^2.11.0",
+    "just-pick": "^1.0.3",
+    "just-pluck-it": "^1.1.21"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "test-no-module-deps",
+  "version": "0.0.0",
+  "dependencies": {}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "test-root-package",
+  "description": "package.json used in tetst.",
+  "version": "0.0.0",
+  "dependencies": {
+    "eslint": "^2.10.0",
+    "just-partial-it": "^1.1.23"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": ""
+}

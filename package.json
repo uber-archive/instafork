@@ -1,5 +1,5 @@
 {
-  "name": "@uber/parachute",
+  "name": "instafork",
   "description": "Eject npm module source into a project locally",
   "version": "0.0.0",
   "author": {
@@ -13,26 +13,35 @@
     "uber-web",
     "web-platform"
   ],
+  "main": "dist/instafork.js",
   "bin": {
-    "parachute": "dist/bin/cli.js"
+    "instafork": "dist/bin/cli.js"
   },
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/uber-web/parachute"
+    "url": "https://github.com/uber-web/instafork"
   },
   "bugs": {
-    "url": "https://github.com/uber-web/parachute/issues"
+    "url": "https://github.com/uber-web/instafork/issues"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "glob": "^7.1.1",
+    "find-up": "^1.0.0",
+    "fs-extra": "^1.0.0",
+    "globby": "^6.1.0",
+    "jscodeshift": "^0.3.30",
+    "jsonfile": "^2.4.0",
     "meow": "^3.6.0",
-    "tar-fs": "^1.14.0"
+    "npm": "^4.0.5",
+    "read-pkg-up": "^1.0.1",
+    "resolve-from": "^2.0.0",
+    "semver": "^5.3.0",
+    "tar-fs": "^1.15.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
@@ -45,7 +54,12 @@
     "eslint-config-uber-es5": "^1.0.0",
     "flow-bin": "^0.37.0",
     "nyc": "^7.1.0",
-    "tape": "^4.6.0"
+    "pre-commit": "^1.2.2",
+    "sinon": "^1.17.7",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0",
+    "temp": "^0.8.3",
+    "uber-licence": "^2.0.2"
   },
   "scripts": {
     "build": "babel src -d dist --copy-files -s",
@@ -53,10 +67,17 @@
     "flow": "flow check",
     "lint": "eslint src",
     "precommit": "npm run lint -s && npm run cover",
-    "pretest": "npm run prepublish",
+    "pretape": "npm run prepublish",
     "prepublish": "npm run build",
-    "test": "npm run lint && npm run flow && nyc node dist/test/test.js"
+    "tape": "nyc tape dist/test/*.js | node_modules/.bin/tap-spec",
+    "test": "npm run lint && npm run flow && npm run tape",
+    "fast-test": "npm run build && npm run tape",
+    "add-licence": "uber-licence"
   },
+  "pre-commit": [
+    "test"
+  ],
+  "pre-commit.silent": true,
   "nyc": {
     "reporter": [
       "cobertura"
