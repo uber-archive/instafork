@@ -36,7 +36,8 @@ Examples
 
 ## API
   Instafork accepts a custom logger object in case you want to log it's usage. The logger passed in has to have a `log` method that will be called with three arguments:
-  ```
+
+  ```js
   /**
    * @param {string} packageName The name of a package that is being ejected.
    * @param {string} errorMessage The error message if any while ejecting a package.
@@ -49,8 +50,10 @@ Examples
     }
   }
   ```
+
   Create a wrapper on top of instafork and pass in your custom Logger:
-  ```
+
+  ```js
   const instafork = require('instafork');
   const logger = new Logger();
 
