@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/uber-web/instafork.svg?branch=master)](https://travis-ci.org/uber-web/instafork)
 [![Coverage Status](https://coveralls.io/repos/github/uber-web/instafork/badge.svg?branch=master)](https://coveralls.io/github/uber-web/instafork?branch=master)
 
-:warning: Use with caution. Instafork is Pre-1.0.0 and the api will likely change :warning:
+:warning: Use with caution. Instafork is pre-1.0.0 and the api will likely change :warning:
 
 Injects package content into your file system. Think of it like a fork, except there is no publish step since all module files are in your project source. This means a package is immediately editable for quick iteration.
 

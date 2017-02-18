@@ -56,7 +56,6 @@
     "eslint-config-uber-es5": "^1.0.0",
     "flow-bin": "^0.37.0",
     "nyc": "^7.1.0",
-    "pre-commit": "^1.2.2",
     "sinon": "^1.17.7",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
