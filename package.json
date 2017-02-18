@@ -50,6 +50,7 @@
     "babel-plugin-transform-flow-strip-types": "^6.18.0",
     "babel-preset-es2015": "^6.3.0",
     "babel-preset-stage-2": "^6.3.0",
+    "coveralls": "^2.11.16",
     "eslint": "^2.10.0",
     "eslint-config-uber-es2015": "^2.0.0",
     "eslint-config-uber-es5": "^1.0.0",
@@ -64,25 +65,15 @@
   },
   "scripts": {
     "build": "babel src -d dist --copy-files -s",
-    "cover": "nyc report --reporter=text-lcov",
+    "cover": "nyc report --reporter=text-lcov | coveralls",
     "flow": "flow check",
     "lint": "eslint src",
-    "precommit": "npm run lint -s && npm run cover",
     "pretape": "npm run prepublish",
     "prepublish": "npm run build",
     "tape": "nyc tape dist/test/*.js | node_modules/.bin/tap-spec",
     "test": "npm run lint && npm run flow && npm run tape",
     "fast-test": "npm run build && npm run tape",
     "add-licence": "uber-licence"
-  },
-  "pre-commit": [
-    "test"
-  ],
-  "pre-commit.silent": true,
-  "nyc": {
-    "reporter": [
-      "cobertura"
-    ]
   },
   "license": "MIT"
 }
