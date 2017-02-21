@@ -32,7 +32,7 @@ Examples
 ## FAQ
 
 * What operating systems are supported?
-  * Unix and Linux. Windows handles tar files different from how *nix systems, so that is left out. PR's welcome.
+  * Unix and Linux. Windows is not supported because it handles `tar` files different from how *nix systems, so that is left out. PR's welcome.
 
 * Why eject to `./src` if that directory exists?
   * If you have a `src` directory in your current file location, it's likely you're using some type of build process like babel. Because of this, you can collocate and transpile your newly instaforked module all from `src`.
