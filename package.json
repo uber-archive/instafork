@@ -42,7 +42,8 @@
     "resolve-from": "^2.0.0",
     "semver": "^5.3.0",
     "tar-fs": "^1.15.0",
-    "uber-codemods": "^1.1.1"
+    "uber-codemods": "^1.1.1",
+    "update-notifier": "^2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
