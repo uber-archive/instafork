@@ -119,34 +119,15 @@ test('installDeps: module with no dependencies', function t(assert) {
 });
 
 test('existsInNodeModules', function t(assert) {
-  assert.plan(4);
-  // in current dependencies
+  assert.plan(2);
+  process.chdir(fixturesPath);
+
   assert.false(helpers.existsInNodeModules('express'),
-  'express should not exist in instafork node_modules');
-  assert.true(helpers.existsInNodeModules('meow'), 'meow should exist in instafork node_modules');
-
-  // in mocked dependencies
-  temp.mkdir('existsInNodeModules', function mkTemp(err, dirPath) {
-    if (err) {
-      throw err;
-    }
-    process.chdir(dirPath);
-    fs.copy(path.join(fixturesPath, 'node_modules'), path.join(process.cwd(), 'node_modules'),
-    function copyModules(copyErr) {
-      if (copyErr) {
-        throw err;
-      }
-      // console.log('\n\nls(path.join(process.cwd(), *)): ', ls(path.join(process.cwd(), '*')));
-
-      assert.false(helpers.existsInNodeModules('express'),
-      'express should not exist in node_modules');
-      assert.true(helpers.existsInNodeModules('just-omit'),
-      'just-omit should exist in node_modules');
-
-      process.chdir(originDir);
-      assert.end();
-    });
-  });
+    'express should not exist in node_modules');
+  assert.true(helpers.existsInNodeModules('just-omit'),
+    'just-omit should exist in node_modules');
+  process.chdir(originDir);
+  assert.end();
 });
 
 // TODO: test function outside of current dir

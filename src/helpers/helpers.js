@@ -152,11 +152,8 @@ function installDeps(newPackageContent: any, cb: Function = () => {}) {
 
 // TODO: support namespaces and versions ("@uber/react-anchor", "express@1.0.0", etc.)
 function existsInNodeModules(moduleName: string) {
-  const resolvePath = resolveFrom(process.cwd(), moduleName);
-  if (typeof resolvePath === 'string') {
-    return true;
-  }
-  return false;
+  const modulePath = resolveFrom(process.cwd(), moduleName) || '';
+  return modulePath.indexOf(path.join(process.cwd(), 'node_modules')) !== -1;
 }
 
 // assumes module already exists in node_modules
