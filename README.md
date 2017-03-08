@@ -3,7 +3,6 @@
 > Instantly copy the source of an npm module locally
 
 [![Build Status](https://travis-ci.org/uber-web/instafork.svg?branch=master)](https://travis-ci.org/uber-web/instafork)
-[![Coverage Status](https://coveralls.io/repos/github/uber-web/instafork/badge.svg?branch=master)](https://coveralls.io/github/uber-web/instafork?branch=master)
 ![](https://img.shields.io/badge/Node-%3E%3Dv6.0.0-ff69b4.svg)
 
 :warning: Use with caution. Instafork is pre-1.0.0 and the api will likely change :warning:
