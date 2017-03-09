@@ -2,10 +2,9 @@
 
 > Instantly copy the source of an npm module locally
 
+[![npm version](https://badge.fury.io/js/instafork.svg)](https://npmjs.org/package/instafork)
 [![Build Status](https://travis-ci.org/uber-web/instafork.svg?branch=master)](https://travis-ci.org/uber-web/instafork)
 ![](https://img.shields.io/badge/Node-%3E%3Dv6.0.0-ff69b4.svg)
-
-:warning: Use with caution. Instafork is pre-1.0.0 and the api will likely change :warning:
 
 Injects package content into your file system. Think of it like a fork, except there is no publish step since all module files are in your project source. This means a package is immediately editable for quick iteration.
 
