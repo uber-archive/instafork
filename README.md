@@ -1,5 +1,7 @@
 # instafork
 
+(This project is deprecated and not maintained. See [FAQ](https://github.com/uber/.github/blob/master/FAQ.md).
+
 > Instantly copy the source of an npm module locally
 
 [![Build Status](https://travis-ci.org/uber-web/instafork.svg?branch=master)](https://travis-ci.org/uber-web/instafork)
